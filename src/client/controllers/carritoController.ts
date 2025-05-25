@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ShopModel } from "../../models/shopModel";
+import ShopModel from "../models/shopModel"
 
 // Obtener el carrto
 export const getShop = async (req: Request, res: Response) => {

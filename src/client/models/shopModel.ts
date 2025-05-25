@@ -2,7 +2,7 @@ import { Schema, model, Types } from "mongoose";
 
 const shopSchema = new Schema({
   userId: {
-    type: Schema.Types.ObjectId,
+    types: Schema.Types.ObjectId,
     ref: "User",
     required: true,
     unique: true,
@@ -23,4 +23,6 @@ const shopSchema = new Schema({
   ],
 }, { timestamps: true });
 
-export const ShopModel = model("Shop", shopSchema);
+const ShopModel = model("Shop", shopSchema);
+
+export default ShopModel;
