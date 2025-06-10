@@ -17,6 +17,11 @@ app.use(cors({
   credentials: true 
 }));
 
+import routesClient from "../src/client/routes/routesClients";
+//import { routesAdmin } from "./admin/routes/routesAdmin";
+app.use("/api/client", routesClient);
+//app.use("/api/admin", routesAdmin);
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {

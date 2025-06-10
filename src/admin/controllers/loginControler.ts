@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { authenticateUser } from "../../admin/services/loginService";
-import sendLoginEmail from "../../admin/helpers/mailingResgister";
+import { sendLoginEmail } from "../../admin/helpers/mailingResgister";
 
 export const login = async (req: Request, res: Response) => {
     const { email, password } = req.body;

@@ -2,7 +2,7 @@ import ProductModel from '../../models/productsModel';
 import { Request, Response } from 'express';
 
 // Obtener todos los productos
-export const getProducts = async (req: Request, res: Response) => {
+const getProducts = async (req: Request, res: Response) => {
     try {
         const products = await ProductModel.find();
 
@@ -19,7 +19,7 @@ export const getProducts = async (req: Request, res: Response) => {
 
 
 // Obtener un producto por su ID
-export const getProductById = async (req: Request, res: Response) => {
+const getProductById = async (req: Request, res: Response) => {
     const { id } = req.params;
     try {
         const product = await ProductModel.findById(id);
@@ -31,5 +31,8 @@ export const getProductById = async (req: Request, res: Response) => {
         console.error('Error fetching product:', error);
         res.status(500).json({ message: 'Internal server error' });
     }};
+
+
+export { getProducts, getProductById };
 
     
